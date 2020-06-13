@@ -13,7 +13,6 @@ matrix:
         - MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
         - PATH=$MSBUILD_PATH:$PATH
       install:
-        - reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSBuild\4.0
         - reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSBuild\
         - set
         - MSBuild.exe -help
