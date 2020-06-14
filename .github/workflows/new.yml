@@ -38,7 +38,7 @@ jobs:
         pwd
         cd build/windows
         pwd
-        MSBuild.exe METIS.sln //p:Configuration=Release
+        MSBuild.exe METIS.sln /p:Configuration=Release /p:Platform=x64
         pwd
     - name: Test with pytest
       run: |
