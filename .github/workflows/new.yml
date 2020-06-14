@@ -26,14 +26,20 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        ls
-        pwd
-        MSBuild.exe -help
+        # ls funziona!
+        # pwd funziona!
+        # MSBuild.exe -help funziona!
         iwr https://github.com/guglielmosanchini/conda-metis/archive/master.zip -OutFile conda-metis-master.zip
         Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('conda-metis-master.zip', '.')
         cd conda-metis-master
         ./vsgen.bat
+        ./prova.bat
+        cd build/windows
+    - name: prova msbuild
+      run: |
+        MSBuild.exe METIS.sln
         # pip install -r tests/test_requirements.txt
+        pwd
 
     - name: Test with pytest
       run: |
