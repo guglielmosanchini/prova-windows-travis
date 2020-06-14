@@ -47,4 +47,5 @@ jobs:
         cd ..
         cd ..
         setx METIS_DLL D:\a\prova-windows-travis\prova-windows-travis\conda-metis-master\build\windows\libmetis\Release\metis.dll
+        cd ..
         python -m pytest
