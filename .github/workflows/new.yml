@@ -30,11 +30,11 @@ jobs:
         # ls funziona!
         # pwd funziona!
         # MSBuild.exe -help funziona!
-        iwr https://github.com/menpo/conda-metis/archive/master.zip -OutFile conda-metis-master.zip
+        iwr https://github.com/guglielmosanchini/conda-metis/archive/master.zip -OutFile conda-metis-master.zip
         Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('conda-metis-master.zip', '.')
         cd conda-metis-master
         ./vsgen.bat
-        #./prova.bat
+        ./prova.bat
         pwd
         cd build/windows
         pwd
