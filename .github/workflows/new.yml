@@ -34,9 +34,11 @@ jobs:
         cd conda-metis-master
         ./vsgen.bat
         ./prova.bat
-        cd build/windows
     - name: prova msbuild
       run: |
+        pwd
+        cd build/windows
+        pwd
         MSBuild.exe METIS.sln
         # pip install -r tests/test_requirements.txt
         pwd
