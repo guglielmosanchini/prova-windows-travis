@@ -33,8 +33,8 @@ jobs:
         iwr https://github.com/guglielmosanchini/conda-metis/archive/master.zip -OutFile conda-metis-master.zip
         Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('conda-metis-master.zip', '.')
         cd conda-metis-master
+        ./prova.bat # moved upwards
         ./vsgen.bat
-        ./prova.bat
         pwd
         cd build/windows
         pwd
@@ -46,4 +46,5 @@ jobs:
         cd ..
         cd ..
         cd ..
-        pytest
+        setx METIS_DLL D:\a\prova-windows-travis\prova-windows-travis\conda-metis-master\build\windows\libmetis\Release\metis.dll
+        python -m pytest
