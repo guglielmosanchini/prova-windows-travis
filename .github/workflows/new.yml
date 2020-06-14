@@ -16,8 +16,8 @@ jobs:
     steps:
     - name: setup-msbuild # install Visual Studio Code
       uses: microsoft/setup-msbuild@v1
-    - name: run-cmake # install cmake
-      uses: lukka/run-cmake@v2.5
+    #- name: run-cmake # install cmake
+    #  uses: lukka/run-cmake@v2.5
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
